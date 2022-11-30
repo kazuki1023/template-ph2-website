@@ -131,7 +131,8 @@
    * @description quizArrayに並び替えたクイズを格納
    * @type {Array}
    */
-  const quizArray = shuffle(ALL_QUIZ)
+  const quizArray = shuffle(ALL_QUIZ);
+  console.log(quizArray);
 
   /**
    * @type {string}
@@ -191,8 +192,12 @@
         answer.classList.add('is-selected');
         const selectedAnswerNumber = Number(answer.getAttribute('data-answer'));
 
+        
+
         // 全てのボタンを非活性化
         setDisabled(answers);
+
+        console.log()
 
         // 正解ならtrue, 不正解ならfalseをcheckCorrectに格納
         const correctNumber = quizArray[selectedQuiz].correctNumber

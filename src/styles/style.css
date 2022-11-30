@@ -1,0 +1,23 @@
+header {
+  margin-top: 30px;
+}
+.problem_list {
+  background-color: black;
+}
+/* ここから問題一覧 */
+.problem_list_content {
+  color: green;
+}
+/* ここまで問題一覧 */
+
+/* ここから問題削除 */
+.problem_list_detail_button {
+  margin: 0 auto;
+  display: block;
+  color: black;
+  background-color: red;
+}
+a {
+  color: black;
+}
+/* ここまで問題削除 */
