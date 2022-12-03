@@ -21,3 +21,18 @@ a {
   color: black;
 }
 /* ここまで問題削除 */
+
+/* ここから問題作成 */
+.problem_create {
+  background-color: black;
+}
+.problem_create_content {
+  color: green;
+}
+.problem_create_content_button {
+  margin: 0 auto;
+  display: block;
+  color: black;
+  background-color: red;
+}
+/* ここまで問題作成 */

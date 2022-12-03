@@ -9,10 +9,10 @@ include_once ('../dbconnect.php');
 // include_once ('../services/delate_question.php');
 ?>
 <!-- ＄questionsに入ってる内容を確認。 -->
-<!-- <?php print_r("<pre>")?>
+<?php print_r("<pre>")?>
 <?php print_r($questions)?>
 <?php print_r("</pre>")?>
-<?php echo "<br>"?> -->
+<?php echo "<br>"?>
 
 <!-- idカラム、contentカラムの値を出力方法を確認した -->
 <?php
@@ -41,6 +41,14 @@ include_once ('../dbconnect.php');
 <body>
   <header></header>
   <main>
+    <section class="problem_create">
+      <h1 class="problem_craete_title"></h1>
+      <div class="problem_create_content">
+        <button class="problem_create_content_button">
+          <a href="http://localhost:8080/admin/questions/create.php">問題作成</a>
+        </button>
+      </div>
+    </section>
     <section class="problem_list">
       <h1 class="problem_list_title">問題一覧</h1>
         <?php {?>
@@ -59,7 +67,7 @@ include_once ('../dbconnect.php');
               };
               echo "<br>";
               echo '</div>';
-              echo '<button class="problem_list_detail_button"><a href="http://localhost:8080/services/delate_question.php?id=';
+              echo '<button class="problem_list_detail_button"><a href="http://localhost:8080/services/delete_question.php?id=';
               echo $question["id"];
               echo '">問題削除</a></button>';
               echo "<br>";

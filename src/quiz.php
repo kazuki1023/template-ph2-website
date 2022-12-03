@@ -1,6 +1,9 @@
 <?php
 // データベースの読み込み
 include_once ('./dbconnect.php');
+print_r("<pre>");
+print_r($questions);
+print_r("</pre>");
 ?>
 
 <?php

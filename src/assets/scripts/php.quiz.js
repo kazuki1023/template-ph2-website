@@ -1,5 +1,5 @@
 'use strict';
- /**
+/**
    * @description 問題と回答の定数
    * @type {QUIZ[]}
    */
