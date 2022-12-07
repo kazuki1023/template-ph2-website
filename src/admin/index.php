@@ -54,7 +54,7 @@ include_once ('../dbconnect.php');
         <?php {?>
           <div class="problem_list_content">
             <?php foreach ($questions as $question) {
-              echo '<p class="problem_list_detail ">';
+              echo '<div class="problem_list_detail ">';
               print_r("問題".$question["id"].":".$question["content"]);
               echo '<div class="problem_list_detail_answer">';
               echo "<br>";
@@ -71,6 +71,7 @@ include_once ('../dbconnect.php');
               echo $question["id"];
               echo '">問題削除</a></button>';
               echo "<br>";
+              echo "</div>";
             }?>
           </div>
         <?php }?>

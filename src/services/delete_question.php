@@ -25,6 +25,25 @@ $stmt_choices->bindParam( ':id', $id, PDO::PARAM_INT);
 $res_questions = $stmt_questions->execute();
 $res_choices = $stmt_choices->execute();
 
-
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>削除内容</title>
+</head>
+<body>
+  <div>
+    <h2>以下の問題を削除しました</h2>
+    <!-- 以下削除内容を書きたい。どの問題を削除したかわかるように、ここに削除した問題のidから、問題ないようをひっぱってきたい。それのやり方がわからない。 -->
+    <div>
+      <p></p>
+    </div>
+
+  </div>
+</body>
+</html>
+
 
