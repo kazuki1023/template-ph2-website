@@ -25,7 +25,7 @@ $title = ["問題文", "選択肢", "正解の選択肢", "問題の画像", "�
   <title>問題作成画面</title>
 </head>
 <body>
-  <?php for($i = 1; $i < 6; $i++) {?>
+  <?php for($i = 0; $i < count($title); $i++) {?>
     <div class="create_<?php echo $i?>">
       <span><?php echo $title[$i]; ?></span>
       <form action=""></form>

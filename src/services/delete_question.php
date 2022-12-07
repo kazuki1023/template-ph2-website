@@ -14,13 +14,16 @@ $id = $delete_id;
 include ('../dbconnect.php');
 
 // (3) SQL作成
-$stmt = $dbh->prepare("DELETE FROM questions WHERE id = :id");
+$stmt_questions = $dbh->prepare("DELETE FROM questions WHERE id = :id");
+$stmt_choices = $dbh->prepare("DELETE FROM choices WHERE id = :id");
 
 // (4) 登録するデータをセット
-$stmt->bindParam( ':id', $id, PDO::PARAM_INT);
+$stmt_questions->bindParam( ':id', $id, PDO::PARAM_INT);
+$stmt_choices->bindParam( ':id', $id, PDO::PARAM_INT);
 
 // (5) SQL実行
-$res = $stmt->execute();
+$res_questions = $stmt_questions->execute();
+$res_choices = $stmt_choices->execute();
 
 
 ?>
