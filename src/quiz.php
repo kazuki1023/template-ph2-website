@@ -139,7 +139,6 @@ shuffle($questions);
     </div>
   </div>
   <!-- /.p-line -->
-
   <footer class="l-footer p-footer">
     <div class="p-fixedLine">
       <a href="https://line.me/R/ti/p/@651htnqp?from=page" target="_blank" rel="noopener noreferrer"

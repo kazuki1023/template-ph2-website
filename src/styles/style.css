@@ -26,6 +26,9 @@ a {
 .problem_create {
   background-color: black;
 }
+.problem_create_title {
+  color: green;
+}
 .problem_create_content {
   color: green;
 }

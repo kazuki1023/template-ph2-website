@@ -1,7 +1,6 @@
 <!-- http://localhost:8080/services/delete_question.php -->
 <?php
 include ('../dbconnect.php');
-
 ?>
 
 <?php
@@ -15,7 +14,7 @@ include ('../dbconnect.php');
 
 // (3) SQL作成
 $stmt_questions = $dbh->prepare("DELETE FROM questions WHERE id = :id");
-$stmt_choices = $dbh->prepare("DELETE FROM choices WHERE id = :id");
+$stmt_choices = $dbh->prepare("DELETE FROM choices WHERE question_id = :id");
 
 // (4) 登録するデータをセット
 $stmt_questions->bindParam( ':id', $id, PDO::PARAM_INT);
@@ -40,6 +39,12 @@ $res_choices = $stmt_choices->execute();
     <!-- 以下削除内容を書きたい。どの問題を削除したかわかるように、ここに削除した問題のidから、問題ないようをひっぱってきたい。それのやり方がわからない。 -->
     <div>
       <p></p>
+    </div>
+
+    <div class="return">
+      <button class="return_button">
+        <a href="../admin/index.php">問題一覧・削除画面に戻る</a>
+      </button>
     </div>
 
   </div>
