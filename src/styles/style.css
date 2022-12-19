@@ -25,12 +25,26 @@ a {
 /* ここから問題作成 */
 .problem_create {
   background-color: black;
+  padding-left: 30px;
 }
-.problem_create_title {
-  color: green;
+.problem_choices {
+  width: 100%;
 }
-.problem_create_content {
+.problem_choices_content {
+  display: flex;
+}
+.problem_create_title,
+.problem_create_content,
+.problem_number,
+.problem_content,
+.problem_image,
+.problem_support,
+.problem_create_subtitle,
+.choice_left,
+.choice_center,
+.choice_right {
   color: green;
+  margin-top: 5px;
 }
 .problem_create_content_button {
   margin: 0 auto;
@@ -38,4 +52,8 @@ a {
   color: black;
   background-color: red;
 }
+h3 {
+  color: green;
+}
+
 /* ここまで問題作成 */

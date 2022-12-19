@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <!-- _φ(･_･ 実装メモ
 データベースのquestions項目を検索
 foreachを使って検索したデータをループ処理
@@ -15,13 +16,14 @@ include_once('../dbconnect.php');
 
 <?php
 $questions_title = ["問題番号","問題文","問題の画像", "補足"];
-$choices_title = ["１個めの選択肢", "２個めの選択肢", "３個めの選択肢", "正解の選択肢"];
+$questions_span = ["problem_number", "problem_content", "problem_image", "problem_support"];
+$questions_name = ["problem_number_name", "problem_content_name", "problem_image_name", "problem_support_name"];
+$choices_title = ["左側の選択肢", "真ん中の選択肢", "右側のの選択肢",];
+$choices_span = ["choice_left", "choice_center", "choice_right"];
+$choices_name = ["choices_number_name", "choices_content_name", "choices_image_name", "choices_support_name"];
+
 ?>
-
-
-<!DOCTYPE html>
 <html lang="ja">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,18 +38,30 @@ $choices_title = ["１個めの選択肢", "２個めの選択肢", "３個め�
   <main>
     <section class="problem_create">
       <h2 class="problem_create_title">問題作成</h2>
+      <h3>問題文作成</h3>
       <?php for ($i = 0; $i < count($questions_title); $i++) { ?>
         <div class="create_<?php echo $i ?>">
-          <span><?php echo $questions_title[$i]; ?></span>
-          <form action="http://localhost:8080/admin/questions/create.php" method="post">
-            <textarea name="" id="" cols="30" rows="10" placeholder="ここに記入してね"></textarea><br>
+          <span class="problem_create_subtitle"><?php echo $questions_title[$i]; ?></span>
+          <form action="http://localhost:8080/admin/questions/create.php" method="post" >
+            <input name="<?php echo $questions_name[$i]?>" id="" cols="10" rows="5" placeholder="ここに記入してね"></input><br>
           </form>
         </div>
       <?php } ?>
-      <?php for ($j = 0; $j < count($choices_title); $j++) { ?>
-        <span><?php echo $choices[$j]; ?></span>
-        <form action=""></form>
-      <?php } ?>
+      <div class="problem_choices">
+        <h3>選択肢作成</h3>
+        <div class="problem_choices_content">
+        <?php for ($j = 0; $j < count($choices_title); $j++) { ?>
+          <span class="<?php echo $choices_span[$j]?>"><?php echo $choices_title[$j]; ?></span>
+          <form action="http://localhost:8080/admin/questions/create.php" method="post">
+            <textarea name="" id="" cols="10" rows="5" placeholder="ここに記入してね"></textarea><br>
+          </form>
+        <?php } ?>
+        <span class="">正解の選択肢</span>
+        <form action="http://localhost:8080/admin/questions/create.php" method="post">
+          <textarea name="" id="" cols="10" rows="5"></textarea>
+        </form>
+        </div>
+      </div>
       <div class="problem_create_content">
         <button class="problem_create_content_button">
           <a href="http://localhost:8080/admin/questions/create.php">問題を作成する</a>
