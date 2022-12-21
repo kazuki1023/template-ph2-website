@@ -11,7 +11,11 @@ header {
 /* ここまで問題一覧 */
 
 /* ここから問題削除 */
-.problem_list_detail_button {
+.problem_button {
+  display: flex;
+}
+.problem_list_delete_button,
+.problem_list_update_button {
   margin: 0 auto;
   display: block;
   color: black;
@@ -23,9 +27,13 @@ a {
 /* ここまで問題削除 */
 
 /* ここから問題作成 */
+form {
+  margin-bottom: -16px;
+}
 .problem_create {
   background-color: black;
   padding-left: 30px;
+  margin-bottom: 16px;
 }
 .problem_choices {
   width: 100%;
@@ -42,7 +50,8 @@ a {
 .problem_create_subtitle,
 .choice_left,
 .choice_center,
-.choice_right {
+.choice_right,
+.choice_correct {
   color: green;
   margin-top: 5px;
 }
@@ -54,6 +63,17 @@ a {
 }
 h3 {
   color: green;
+  margin: 0;
 }
 
 /* ここまで問題作成 */
+/* ここから問題更新 */
+.problem_update {
+  background-color: black;
+  padding-left: 30px;
+}
+.problem_update_subtitle {
+  color: green;
+  margin-top: 5px;
+}
+/* ここまで問題更新 */

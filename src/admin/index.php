@@ -57,9 +57,14 @@ $choices_name = ["choices_number_name", "choices_content_name", "choices_image_n
             };
             echo "<br>";
             echo '</div>';
-            echo '<button class="problem_list_detail_button"><a href="http://localhost:8080/services/delete_question.php?id=';
+            echo '<div class="problem_button">';
+            echo '<button class="problem_list_delete_button"><a href="http://localhost:8080/services/delete_question.php?id=';
             echo $question["id"];
             echo '">問題削除</a></button>';
+            echo '<button class="problem_list_update_button"><a href="http://localhost:8080/admin/questions/create.php?id=';
+            echo $question["id"];
+            echo '">問題更新</a></button>';
+            echo '</div>';
             echo "<br>";
             echo "</div>";
           } ?>
