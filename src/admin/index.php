@@ -8,6 +8,7 @@ idカラム、contentカラムの値を出力 -->
 <?php
 include_once('../dbconnect.php');
 // include_once ('../services/delate_question.php');
+// print_r($questions);
 ?>
 
 
@@ -36,38 +37,6 @@ $choices_name = ["choices_number_name", "choices_content_name", "choices_image_n
 <body>
   <header></header>
   <main>
-    <section class="problem_create">
-      <h2 class="problem_create_title">問題作成</h2>
-      <h3>問題文作成</h3>
-      <?php for ($i = 0; $i < count($questions_title); $i++) { ?>
-        <div class="create_<?php echo $i ?>">
-          <span class="problem_create_subtitle"><?php echo $questions_title[$i]; ?></span>
-          <form action="http://localhost:8080/admin/questions/create.php" method="post" >
-            <input name="<?php echo $questions_name[$i]?>" id="" cols="10" rows="5" placeholder="ここに記入してね"></input><br>
-          </form>
-        </div>
-      <?php } ?>
-      <div class="problem_choices">
-        <h3>選択肢作成</h3>
-        <div class="problem_choices_content">
-        <?php for ($j = 0; $j < count($choices_title); $j++) { ?>
-          <span class="<?php echo $choices_span[$j]?>"><?php echo $choices_title[$j]; ?></span>
-          <form action="http://localhost:8080/admin/questions/create.php" method="post">
-            <textarea name="" id="" cols="10" rows="5" placeholder="ここに記入してね"></textarea><br>
-          </form>
-        <?php } ?>
-        <span class="">正解の選択肢</span>
-        <form action="http://localhost:8080/admin/questions/create.php" method="post">
-          <textarea name="" id="" cols="10" rows="5"></textarea>
-        </form>
-        </div>
-      </div>
-      <div class="problem_create_content">
-        <button class="problem_create_content_button">
-          <a href="http://localhost:8080/admin/questions/create.php">問題を作成する</a>
-        </button>
-      </div>
-    </section>
     <section class="problem_list">
       <h2 class="problem_list_title">問題一覧</h2>
       <?php { ?>

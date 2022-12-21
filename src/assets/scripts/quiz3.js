@@ -192,8 +192,6 @@
         answer.classList.add('is-selected');
         const selectedAnswerNumber = Number(answer.getAttribute('data-answer'));
 
-        
-
         // 全てのボタンを非活性化
         setDisabled(answers);
 
