@@ -63,7 +63,7 @@ try {
   }
 
 // choices用
-$choices_sql = 'UPDATE choices question_id = :question_id, name = :name WHERE question_id = :question_id';
+$choices_sql = 'UPDATE choices SET question_id = :question_id, name = :name WHERE question_id = :question_id';
 $choices_stmt = $dbh->prepare($choices_sql);
 
 // 左側の値をセット
@@ -71,7 +71,8 @@ $choices_stmt->bindValue(':question_id', $_POST['problem_number_name'], PDO::PAR
 $choices_stmt->bindValue(':name', $_POST['choices_left_name'], PDO::PARAM_STR);
 // $choices_stmt->bindValue(':valid', 1, PDO::PARAM_INT);
 $choices_stmt->execute();
-// // 真ん中の値をセット
+
+// 真ん中の値をセット
 $choices_stmt->bindValue(':question_id', $_POST['problem_number_name'], PDO::PARAM_INT);
 $choices_stmt->bindValue(':name', $_POST['choices_center_name'], PDO::PARAM_STR);
 // $choices_stmt->bindValue(':valid', 1, PDO::PARAM_INT);
@@ -80,7 +81,7 @@ $choices_stmt->execute();
 $choices_stmt->bindValue(':question_id', $_POST['problem_number_name'], PDO::PARAM_INT);
 $choices_stmt->bindValue(':name', $_POST['choices_right_name'], PDO::PARAM_STR);
 // $choices_stmt->bindValue(':valid', 1, PDO::PARAM_INT);
-$choices_stmt->execute();
+// $choices_stmt->execute();
 
 // SQL実行
 

@@ -35,7 +35,11 @@ $choices_name = ["choices_number_name", "choices_content_name", "choices_image_n
 </head>
 
 <body>
-  <header></header>
+  <header>
+    <div>
+      <button class="logout"><a href="http://localhost:8080/admin/logout.php">ログアウト</a></button>
+    </div>
+  </header>
   <main>
     <section class="problem_list">
       <h2 class="problem_list_title">問題一覧</h2>

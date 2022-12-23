@@ -39,6 +39,9 @@ shuffle($questions);
     <div class="p-header__inner">
       <nav class="p-header__nav">
         <ul class="p-header__nav__list">
+        <li class="p-header__nav__item">
+            <a href="./admin/login.php" class="p-header__nav__item__link">管理者画面</a>
+          </li>
           <li class="p-header__nav__item">
             <a href="../" class="p-header__nav__item__link">POSSEとは</a>
           </li>
