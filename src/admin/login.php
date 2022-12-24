@@ -19,14 +19,14 @@ include_once("../dbconnect.php");
   <main>
     <h2>ログイン画面</h2>
     <div>
-      <form action="http://localhost:8080/admin/login_judge.php" method="post" class="login_form">
+      <form action="http://localhost:8080/admin/login_judge.php" method="post" class="login_form" autocomplete="off">
         <div class="login_form_email">
           <label for="login_email" >メールアドレス</label>
-          <input type="text" id="login_email" placeholder="メールアドレスを入力してください" name="email" require>
+          <input type="text" id="login_email" placeholder="メールアドレスを入力してください" name="email" required>
         </div>
         <div class="login_form_password">
           <label for="login_password">パスワード</label>
-          <input type="text" id="login_password" placeholder="パスワードを入力してください" name="password" require>
+          <input type="text" id="login_password" placeholder="パスワードを入力してください" name="password" required>
         </div>
         <div class="login_button">
           <button name="login" type="submit">ログインする</button>
@@ -35,18 +35,18 @@ include_once("../dbconnect.php");
     </div>
     <h2>新規登録</h2>
     <div>
-      <form action="http://localhost:8080/admin/register.php" method="post" class="register_form">
+      <form action="http://localhost:8080/admin/register.php" method="post" class="register_form" autocomplete="off">
         <div class="register_form_name">
           <label for="register_name">名前</label>
-          <input type="text" id="register_name" placeholder="名前を入力してください" name="name" require>
+          <input type="text" id="register_name" placeholder="名前を入力してください" name="name" required>
         </div>
         <div class="register_form_email">
           <label for="register_email" >メールアドレス</label>
-          <input type="text" id="register_email" placeholder="メールアドレスを入力してください" name="email" require>
+          <input type="text" id="register_email" placeholder="メールアドレスを入力してください" name="email" required>
         </div>
         <div class="register_form_password">
           <label for="register_password">パスワード</label>
-          <input type="text" id="register_password" placeholder="パスワードを入力してください" name="password" require>
+          <input type="text" id="register_password" placeholder="パスワードを入力してください" name="password" required>
         </div>
         <div class="register_button">
           <button name="register" type="submit">新規登録する</button>

@@ -7,10 +7,14 @@ try {
   $register_sql = 'INSERT INTO users (name, email, password)   VALUES(:name, :email, :password)';
   $register_stmt = $dbh->prepare($register_sql);
 
+  // passwordをハッシュ化
+  $password = $_POST['password'];
+  $password_hash = password_hash($password,PASSWORD_DEFAULT);
+
   // 値をセット
-  $register_stmt->bindValue(':name', $_POST['register_name'], PDO::PARAM_STR);
-  $register_stmt->bindValue(':email', $_POST['register_email'],PDO::PARAM_STR);
-  $register_stmt->bindValue(':password', $_POST  ['register_password'], PDO::PARAM_STR);
+  $register_stmt->bindValue(':name', $_POST['name'], PDO::PARAM_STR);
+  $register_stmt->bindValue(':email', $_POST['email'],PDO::PARAM_STR);
+  $register_stmt->bindValue(':password', $password_hash, PDO::PARAM_STR);
   // SQL実行
   $register_stmt->execute();
 } catch (PDOException $e) {
