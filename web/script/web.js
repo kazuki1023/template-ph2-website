@@ -174,7 +174,7 @@ calenderCloseButton.addEventListener("click", () => {
       });
     };
     // console.log(dates)
-    
+
     const chartDate = [];
     chartDate.push({
       date: dates[1].date
@@ -223,9 +223,9 @@ calenderCloseButton.addEventListener("click", () => {
 
     for(let i = 0; i < weekCount; i++){
       weeks.push(dates.splice(0, 7));
-      
+
     }
-    
+
     weeks.forEach(week => {
       const tr = document.createElement('tr');
       week.forEach(date => {
@@ -246,7 +246,7 @@ calenderCloseButton.addEventListener("click", () => {
       console.log(document.querySelector('tbody'));
       console.log(tbody);
     })
-  } 
+  }
   createCalender()
 
 
@@ -334,7 +334,7 @@ modalRecord[0].addEventListener("click", () => {
 }
 
 
-// 棒グラフの作成
+// 学習時間の棒グラフの作成
 {
   const ctx = document.getElementById("hours_chart").getContext('2d');
   const houtsChart = new Chart(ctx, {
@@ -350,7 +350,7 @@ modalRecord[0].addEventListener("click", () => {
           borderWidth: 2,
         }
     ],
-  }, 
+  },
   options: {
     responsive: false,
     legend: {
@@ -410,6 +410,8 @@ modalRecord[0].addEventListener("click", () => {
   }
 })
 }
+
+// 
 
 // 学習言語の円グラフの作成
 // {

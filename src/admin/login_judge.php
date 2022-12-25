@@ -13,6 +13,17 @@ $stmt = $dbh->prepare($loginsql);
 $stmt->bindValue(':email', $email);
 $stmt->execute();
 $member = $stmt->fetch();
+// 
+if (isset($_POST['password'], $member['password'])){
+    //DBのユーザー情報をセッションに保存
+    $_SESSION['id'] = $member['id'];
+    $_SESSION['name'] = $member['name'];
+    $msg = 'ログインしました。';
+    $link = '<a href="http://localhost:8080/admin/index.php">管理者画面へ</a>';
+} else {
+    $msg = 'メールアドレスもしくはパスワードが間違っています。';
+    $link = '<a href="login.php">戻る</a>';
+};
 //指定したハッシュがパスワードにマッチしているかチェック
 if (password_verify($_POST['password'], $member['password'])){
     //DBのユーザー情報をセッションに保存
@@ -24,16 +35,7 @@ if (password_verify($_POST['password'], $member['password'])){
     $msg = 'メールアドレスもしくはパスワードが間違っています。';
     $link = '<a href="login.php">戻る</a>';
 };
-if (isset($_POST['password'], $member['password'])){
-    //DBのユーザー情報をセッションに保存
-    $_SESSION['id'] = $member['id'];
-    $_SESSION['name'] = $member['name'];
-    $msg = 'ログインしました。';
-    $link = '<a href="http://localhost:8080/admin/index.php">管理者画面へ</a>';
-} else {
-    $msg = 'メールアドレスもしくはパスワードが間違っています。';
-    $link = '<a href="login.php">戻る</a>';
-};
+
 echo $msg;
 echo "<br>";
 echo  $link;
