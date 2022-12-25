@@ -127,6 +127,7 @@
 .modal_learning_day_detail {
   border-radius: 5px;
 }
+
 .learning_day_title {
   text-align: left;
   margin-left: 20px;
@@ -441,7 +442,7 @@ input[type=checkbox] + label::after {
   margin: 0;
 }
 
-.today_hours{
+#today_hours{
   background-color: white;
   list-style: none;
   border-radius: 8px;

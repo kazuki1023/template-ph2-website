@@ -28,13 +28,13 @@
     <div class="container">
       <div class="hours_container">
         <div class="hours">
-          <ul class="today_hours">
-            <li class="hours_title">Today</li>
+          <ul id="today_hours">
+            <li class="hours_title" id="today_title" name="today"></li>
             <li class="hours_count">3</li>
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="month_hours">
-            <li class="hours_title">Month</li>
+            <li class="hours_title" id="month_title"></li>
             <li class="hours_count">120</li>
             <li class="hours_hour">hour</li>
           </ul>
@@ -85,7 +85,7 @@
       <button id="footer_record_button">記録・投稿</button>
     </div>
     <div class="modal">
-      <form action="" method="post" >
+      <form action="" method="post" id="form_record">
         <div class="modal_content">
           <button class="modal_close"><span class="batsu"></span></button>
           <div class="modal_detail">
@@ -93,8 +93,8 @@
               <div class="modal_learning_day">
                 <div class="modal_learning_day_detail">
                   <p class="learning_day_title" >学習日</p>
-                  <input type="hidden" name="learning_day_detail" class="learning_day_text">
-                  <button type="text" id="learning_day_detail" placeholder="2022年10月23日">
+                  <input type="date" name="learning_day_detail" class="learning_day_text">
+                  <!-- <button id="learning_day_detail" placeholder="2022年10月23日"> -->
                 </div>
               </div>
               <div class="modal_learning_content">
@@ -155,7 +155,7 @@
               </div>
             </div>
           </div>
-          <button class="modal_record">記録・投稿</button>
+          <button class="modal_record" id="modal_record">記録・投稿</button>
         </div>
       </form>
     </div>

@@ -1,4 +1,32 @@
 "use strict"
+// 今日の日付を持ってくる(年、月、日)
+const today = new Date();
+let year = today.getFullYear();
+let month = today.getMonth() + 1;
+let date = today. getDate();
+
+// 取得した日付を挿入
+let today_title = year + "/" + month + "/" + date
+const hours_today_title = document.getElementById("today_title");
+hours_today_title.insertAdjacentHTML("afterbegin", today_title);
+// 取得した日付をname属性に挿入
+  // 取得した日付を数値から、文字列に変換
+  let character_year = String(year);
+  let character_month = String(month);
+  let character_date = String(date);
+const today_date = character_year + character_month + character_date;
+hours_today_title.setAttribute('name', today_date);
+
+
+
+// 記録投稿ボタン押されてからはformが送られるようにする
+const form_record = document.getElementById("form_record");
+const modalRecord = document.getElementsByClassName("modal_record");
+modalRecord[0].addEventListener("click", () => {
+  console.log("そうしんしたよ")
+
+})
+
 
 // モーダル
 
@@ -9,7 +37,7 @@ headerRecordButton.addEventListener("click", () => {
   modal[0].classList.toggle("modal_active");
 });
 
-console.log(modal);
+// console.log(modal);
 
 // footerの記録ボタンを押すとモーダルが出てくる
 const footerRecoedButton = document.getElementById('footer_record_button');
@@ -19,18 +47,18 @@ footerRecoedButton.addEventListener("click", () => {
 
 // ボタンを押すと、モーダルが閉じる処理
 const modalCloseButton = document.getElementsByClassName('modal_close');
-console.log(modalCloseButton)
+// console.log(modalCloseButton)
 modalCloseButton[0].addEventListener("click", () => {
   modal[0].classList.remove("modal_active");
 })
 
 // 学習日を押すとカレンダーが出てくる
-const learningDayDetail = document.getElementById('learning_day_detail');
-const calender = document.getElementsByClassName("calender");
-learningDayDetail.addEventListener("click", () => {
-  calender[0].classList.toggle("calender_active");
-  modal[0].classList.remove("modal_active");
-})
+// const learningDayDetail = document.getElementById('learning_day_detail');
+// const calender = document.getElementsByClassName("calender");
+// learningDayDetail.addEventListener("click", () => {
+//   calender[0].classList.toggle("calender_active");
+//   modal[0].classList.remove("modal_active");
+// })
 
 //ボタンを押すとカレンダーが閉じる
 const calenderCloseButton = document.getElementById("calender_close");
@@ -243,8 +271,8 @@ calenderCloseButton.addEventListener("click", () => {
         tr.appendChild(td);
       });
       const tbody = document.querySelector('tbody').appendChild(tr);
-      console.log(document.querySelector('tbody'));
-      console.log(tbody);
+      // console.log(document.querySelector('tbody'));
+      // console.log(tbody);
     })
   }
   createCalender()
