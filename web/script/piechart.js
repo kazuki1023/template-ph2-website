@@ -3,74 +3,106 @@
 {
   var options = {
     series: [{
-    name: 'Servings',
-    data: [44, 55, 41, 67, 22, 43, 21, 33, 45, 31, 87, 65, 35]
-  }],
-    annotations: {
-    points: [{
-      x: 'Bananas',
-      seriesIndex: 0,
-      label: {
-        borderColor: '#775DD0',
-        offsetY: 0,
-        style: {
-          color: '#fff',
-          background: '#775DD0',
-        },
-        text: 'Bananas are good',
-      }
-    }]
-  },
-  chart: {
-    height: 350,
-    type: 'bar',
-  },
-  plotOptions: {
-    bar: {
-      borderRadius: 10,
-      columnWidth: '50%',
+      name: 'hour',
+      data: [3, 4, 5, 3, 0, 0, 4, 2, 2, 8, 8, 2, 2, 1, 7, 4, 4, 3, 3, 3, 2, 2, 6, 2, 2, 1, 1, 1, 7, 8]
     }
-  },
-  dataLabels: {
-    enabled: false
-  },
-  stroke: {
-    width: 2
-  },
-  grid: {
-    row: {
-      colors: ['#fff', '#f2f2f2']
-    }
-  },
-  xaxis: {
-    labels: {
-      rotate: -45
-    },
-    categories: ['Apples', 'Oranges', 'Strawberries', 'Pineapples', 'Mangoes', 'Bananas',
-      'Blackberries', 'Pears', 'Watermelons', 'Cherries', 'Pomegranates', 'Tangerines', 'Papayas'
     ],
-    tickPlacement: 'on'
-  },
-  yaxis: {
-    title: {
-      text: 'Servings',
+    chart: {
+      type: 'bar',
+      height: 420,
+      toolbar:{
+        show:false
+      },
     },
-  },
-  fill: {
-    type: 'gradient',
-    gradient: {
-      shade: 'light',
-      type: "horizontal",
-      shadeIntensity: 0.25,
-      gradientToColors: undefined,
-      inverseColors: true,
-      opacityFrom: 0.85,
-      opacityTo: 0.85,
-      stops: [50, 0, 100]
+    plotOptions: {
+      bar: {
+        horizontal: false,
+        columnWidth: '50%',
+        borderRadius: 5, 
+        endingShape: 'rounded'
+      },
     },
-  }
-  };
-  var chart = new ApexCharts(document.getElementById("hours_chart"), options);
+    dataLabels: {
+      enabled: false
+    },
+    xaxis: {
+      axisTicks: {
+        show:false //x軸の値区切り.-.
+      },
+      axisBorder:{
+        show:false
+      },
+    
+      labels: {
+        formatter: function (value) {
+          if (value !== undefined) {
+            const categories = value.split(" ")
+            const day = categories[0]
+            return day % 2 == 1 ? "" : value;
+          }
+        },
+        style: {
+          colors:'#6ba0f0'
+        },
+      },
+    },  
+  
+    grid: {
+      yaxis: { 
+          lines: {
+              show: false
+          },
+      }, 
+    },
+  
+    yaxis: {
+      labels: {
+        formatter: function (value) {
+          return value + "h";
+        },
+        style: {
+          colors: '#6ba0f0',
+        }
+      },
+      type:'category',
+      axisTicks: {
+        show: false,
+        width: 1,
+      }
+    },
+
+    labels : ['1', '2', '3', '4', '5', '6', '7', '8', '9',   '10', '11', '12', '13', '14', '15', '16', '17', '18',   '19', '20', '21', '22', '23', '24', '25', '26', '27',   '28', '29', '30'],
+
+    fill: {
+        colors:["#1174BD"],
+        type: 'gradient', 
+        gradient: {
+        type: 'vertical', //上垂直にグラデーション 
+        gradientToColors: ['#3BCFFF'], 
+      }
+    },
+
+    responsive: [
+      {
+      breakpoint: 480,
+      options: {
+          xaxis: {
+              labels: {
+                  offsetY: -7,
+                  style: {
+                      fontSize: '7.5px',
+                  }
+              }
+          },
+          chart: {
+              height: 200,
+          }
+      },
+      }
+    ]
+  };  
+
+  var chart = new ApexCharts(document.querySelector("#hours_chart"), options);
   chart.render();
 }
 
