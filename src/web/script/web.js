@@ -358,7 +358,6 @@ modalRecord[0].addEventListener("click", () => {
   })
 })
 
-
 }
 
 

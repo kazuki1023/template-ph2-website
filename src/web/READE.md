@@ -71,13 +71,13 @@
 
 
 ## week29
-- [] hoursテーブルを作成する
-- [] hoursテーブルを配列に挿入
-- [] contentテーブルを作成する
-- [] contentテーブルを配列に挿入
-- [] languagesテーブルを作成する
-- [] languagesテーブルを配列に挿入
-- [] 
+- [x] hoursテーブルを作成する
+- [x] hoursテーブルを配列に挿入
+- [x] contentテーブルを作成する
+- [x] contentテーブルを配列に挿入
+- [x] languagesテーブルを作成する
+- [x] languagesテーブルを配列に挿入
+- [x] ダミーデータの挿入
 - []
 
 ### week30
