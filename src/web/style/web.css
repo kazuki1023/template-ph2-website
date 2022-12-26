@@ -127,11 +127,13 @@
 .modal_learning_day_detail {
   border-radius: 5px;
 }
+
 .learning_day_title {
   text-align: left;
   margin-left: 20px;
   margin-bottom: 5px;
 }
+
 #learning_day_detail {
   width: 80%;
   border-radius: 10px;
@@ -440,7 +442,7 @@ input[type=checkbox] + label::after {
   margin: 0;
 }
 
-.today_hours{
+#today_hours{
   background-color: white;
   list-style: none;
   border-radius: 8px;
@@ -490,11 +492,11 @@ input[type=checkbox] + label::after {
 }
 /* 学習時間のグラフ */
 .canvas_container {
-  position: relative;
+  /* position: relative;
   width:  calc(100% - 40px);
   height: 300px;
   overflow: hidden;
-  margin:20px;
+  margin:20px; */
 }
 #hours_chart {
   background-color: white;

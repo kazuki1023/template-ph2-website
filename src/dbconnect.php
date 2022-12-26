@@ -9,21 +9,9 @@ $dbh = new PDO($dsn, $user, $password);
 $sql = 'SELECT id, content FROM questions';
 // ↑これはただの文字列、ただ、queryに代入するものをシンプルにするためだけにかいてるもの。
 
-
-
-// foreach ($dbh->query($sql) as $row) {
-//     print $row['id'].$row['content'] . "<br>";
-// }
-
 // questionテーブルを検索し、結果をquestion変数に代入する処理
 $sql_questions = 'SELECT *  FROM questions';
 $questions = $dbh->query($sql_questions)->fetchAll(PDO::FETCH_ASSOC);
-
-// print_r($dbh->query($sql_questions)->fetchAll(PDO::FETCH_ASSOC));
-// print_r("<pre>");
-// print_r($questions);
-// print_r("</pre>");
-// echo "<br>";
 
 
 // choicesテーブルを検索し、結果をquestion変数に代入する処理
@@ -38,5 +26,17 @@ foreach ($choices as $key => $choice) {
   $index = array_search($choice["question_id"], array_column($questions, 'id'));
   $questions[$index]["choices"][] = $choice;
 }
+
+// hoursテーブルを持ってきて配列に挿入
+$sql_hours = 'SELECT * FROM hours';
+$hours = $dbh->query($sql_hours)->fetchAll(PDO::FETCH_ASSOC);
+
+// contentsテーブルを持ってきて配列に挿入
+$sql_contents = 'SELECT * FROM contents';
+$contents = $dbh->query($sql_contents)->fetchAll(PDO::FETCH_ASSOC);
+
+// languagesテーブルを持ってきて配列に挿入
+$sql_languages = 'SELECT * FROM languages';
+$languages = $dbh->query($sql_languages)->fetchAll(PDO::FETCH_ASSOC);
 
 
