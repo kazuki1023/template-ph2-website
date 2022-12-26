@@ -21,7 +21,7 @@ $sql_choices = 'SELECT * FROM choices';
 $choices = $dbh->query($sql_choices)->fetchAll(PDO::FETCH_ASSOC);
 // print_r($choices);
 
-// questionsテーブルとchoicesテーブルを作成
+// questionsテーブルとchoicesテーブルを結びつける
 foreach ($choices as $key => $choice) {
   $index = array_search($choice["question_id"], array_column($questions, 'id'));
   $questions[$index]["choices"][] = $choice;
