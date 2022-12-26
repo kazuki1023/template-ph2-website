@@ -38,13 +38,13 @@ include_once("./admin/index.php");
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="month_hours">
-            <li class="hours_title" id="month_title">今月の情報</li>
-            <li class="hours_count">120</li>
+            <li class="hours_title" id="month_title"><?php echo $this_month?>月の情報</li>
+            <li class="hours_count"><?php echo $month_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="total_hours">
             <li class="hours_title">Total</li>
-            <li class="hours_count">1348</li>
+            <li class="hours_count"><?php echo $total_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
         </div>
@@ -80,7 +80,7 @@ include_once("./admin/index.php");
     </div>
     <div class="date">
       <div class="arrow arrow-left"></div>
-      <div id="date_detail">2022年 10月</div>
+      <div id="date_detail"><?php echo $this_month;?></div>
       <div class="arrow arrow-right"></div>
     </div>
     <div class="footer_record">
@@ -169,7 +169,7 @@ include_once("./admin/index.php");
             <thead>
               <tr>
                 <th id="prev">&laquo;</th>
-                <th id="title" colspan="5">2022/10</th>
+                <th id="title" colspan="3">2022/10</th>
                 <th id="next">&raquo;</th>
               </tr>
               <tr>

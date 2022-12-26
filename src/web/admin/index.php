@@ -1,5 +1,7 @@
 <?php
 // db接続
+// http://localhost:8080/web/admin/index.php
+// 上記にアクセスするときはコメントアウト解除
 // include_once("../../dbconnect.php");
 ?>
 
@@ -45,22 +47,41 @@ foreach ($contents as $key =>$content) {
 ?>
 <!-- hoursテーブルを日、月、合計ごとのテーブルにまとめる -->
 <?php
-// まず日毎のデータを検索し、
+// まず日毎のデータを検索し、今日の勉強時間を出す
 $objDateTime = new DateTime();
 $today = $objDateTime->format('Y'.'m'.'d');
 $sql_today = 'SELECT * FROM hours WHERE date_id = :today';
-$stmt = $dbh->prepare($sql_today);
-$stmt->bindValue(':today', $today);
-$stmt->execute();
-$result_todays = $stmt->fetchAll();
+$today_stmt = $dbh->prepare($sql_today);
+$today_stmt->bindValue(':today', $today);
+$today_stmt->execute();
+$result_todays = $today_stmt->fetchAll();
 $today_sum = 0;
 foreach($result_todays as $result_today) {
   $today_sum += $result_today["hours"];
 }
-// echo $today_sum;
 // // 配列の中に今日の日付と時間が入ってる.
-// echo "<pre>";
-// print_r($result_todays);
-// echo "</pre>";
+// 今月のデータを検索し、今月の勉強時間を出す
+$this_month = $objDateTime->format('Y/m');
+$this_month_first = $objDateTime->format('Y'.'m'.'00');
+$sql_this_month = 'SELECT * FROM hours WHERE date_id BETWEEN :this_month_first AND :today';
+$month_stmt = $dbh->prepare($sql_this_month);
+$month_stmt->bindValue(':this_month_first',$this_month_first);
+$month_stmt->bindValue(':today',$today);
+$month_stmt->execute();
+$result_monthes = $month_stmt->fetchAll();
+$month_sum = 0;
+foreach($result_monthes as $result_month) {
+  $month_sum += $result_month["hours"];
+}
 
+// これまでの勉強時間を算出する
+$sql_total_month = 'SELECT * FROM hours WHERE date_id <= :today';
+$total_stmt = $dbh->prepare($sql_total_month);
+$total_stmt->bindValue(':today', $today);
+$total_stmt->execute();
+$result_totals = $total_stmt->fetchAll();
+$total_sum = 0;
+foreach($result_totals as $result_total) {
+  $total_sum += $result_total["hours"];
+};
 ?>
