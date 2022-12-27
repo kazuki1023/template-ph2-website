@@ -100,7 +100,9 @@ include_once("./admin/index.php");
                 <div class="modal_learning_day_detail">
                   <p class="learning_day_title" >学習日</p>
                   <input type="date" name="learning_day_detail" class="learning_day_text">
-                  <!-- <button id="learning_day_detail" placeholder="2022年10月23日"> -->
+                  <div class="modal_date">
+                    <input type="checkbox" name ="date[]" id="date_check"><label for="date_check" class="date_check"></label>
+                  </div>
                 </div>
               </div>
               <div class="modal_learning_content">

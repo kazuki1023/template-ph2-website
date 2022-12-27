@@ -62,6 +62,13 @@ calenderCloseButton.addEventListener("click", () => {
 
 // モーダル内の学習コンテンツ,学習言語の項目を押したら青くなる処理
 {
+  // 日にち確定ボタン
+  const dateCheck = document.getElementsByClassName('date_check');
+  const modalDate = document.getElementsByClassName('modal_date');
+  dateCheck[0].addEventListener("click", () => {
+    dateCheck[0].classList.toggle("date_check_active");
+    modalDate[0].classList.toggle("modal_date_active");
+  })
   // N予備校
   const NcramSchool = document.getElementsByClassName('N_cramSchool');
   const modalN = document.getElementsByClassName('modal_N');

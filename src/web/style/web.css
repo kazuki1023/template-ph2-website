@@ -263,7 +263,8 @@ table {
 .modal_laravel,
 .modal_sql,
 .modal_shell,
-.modal_others{
+.modal_others,
+.modal_date{
   border-radius: 8px;
   border: solid;
   border-color: rgba(117, 111, 111, 0.047);
@@ -271,6 +272,11 @@ table {
   padding-top: 5px;
   padding-bottom: 5px;
   padding-left: 10px;
+}
+
+.date_check {
+  width: 100% !important;
+  display: inline-block;
 }
 
 .modal_N_active,
@@ -283,7 +289,8 @@ table {
 .modal_laravel_active,
 .modal_sql_active,
 .modal_shell_active,
-.modal_others_active
+.modal_others_active,
+.modal_date_active
 {
   background-color: rgb(110, 196, 250, 0.7);
 }
@@ -298,7 +305,9 @@ table {
 .laravel_active::before,
 .sql_active::before,
 .shell_active::before,
-.others_active::before{
+.others_active::before,
+.date_check_active::before
+{
   position: absolute;
   top: 32%;
   display: block;
