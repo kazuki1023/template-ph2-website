@@ -78,11 +78,15 @@ include_once("./admin/index.php");
         </div>
       </div>
     </div>
-    <div class="date">
-      <div class="arrow arrow-left"></div>
+    <form class="date" action="" method="POST">
+      <button class="date_button" type="submit">
+        <div class="arrow arrow-left"></div>
+      </button>
       <div id="date_detail"><?php echo $this_month;?></div>
-      <div class="arrow arrow-right"></div>
-    </div>
+      <button class="date_button" type="submit">
+        <div class="arrow arrow-right"></div>
+      </button>
+    </form>
     <div class="footer_record">
       <button id="footer_record_button">記録・投稿</button>
     </div>

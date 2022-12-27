@@ -608,6 +608,13 @@ input[type=checkbox] + label::after {
   text-align: center;
   vertical-align: middle;
   margin-top: 20px;
+  justify-content: center;
+  gap: 30px;
+}
+.date_button {
+  border: none;
+  background-color: #F8F8F8;
+  color: #F8F8F8;
 }
 
 #date_detail {
