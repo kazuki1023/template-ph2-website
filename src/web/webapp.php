@@ -38,12 +38,12 @@ include_once("./admin/index.php");
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="month_hours">
-            <li class="hours_title" id="month_title"><?php echo $this_month?>月の情報</li>
+            <li class="hours_title" id="month_title"><?php echo $this_month?>の合計</li>
             <li class="hours_count"><?php echo $month_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
           <ul class="total_hours">
-            <li class="hours_title">Total</li>
+            <li class="hours_title">総計</li>
             <li class="hours_count"><?php echo $total_sum;?></li>
             <li class="hours_hour">hour</li>
           </ul>
