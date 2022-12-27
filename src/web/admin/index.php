@@ -23,9 +23,9 @@ foreach ($contents as $key =>$content) {
   // $contents_date_array[] = $content["date_id"];
   // $contents_content_array[] = $content["content"];
   unset($content["id"], $content["date"]);
-  echo "<pre>";
-  print_r($content);
-  echo "</pre>";
+  // echo "<pre>";
+  // print_r($content);
+  // echo "</pre>";
 }
 // echo "<pre>";
 // print_r($contents_date_array);
@@ -67,9 +67,9 @@ foreach($result_todays as $key => $result_today) {
 unset($result_today[0], $result_today[1], $result_today[2], $result_today[3]);
 // $result_todayに今日の学習時間の合計を代入
 $result_today["day_sum"] = $today_sum;
-echo "<pre>";
-print_r($result_today);
-echo "</pre>";
+// echo "<pre>";
+// print_r($result_today);
+// echo "</pre>";
 
 
 // 今月のデータを検索し、今月の勉強時間を出す
@@ -89,10 +89,10 @@ unset($result_month[0],$result_month[1],$result_month[2],$result_month[3]);
 $result_month["month_sum"] = $month_sum;
 
 
-echo "<pre>";
-print_r($result_month);
-// print_r(array_values($result_month));
-echo "</pre>";
+// echo "<pre>";
+// print_r($result_month);
+// // print_r(array_values($result_month));
+// echo "</pre>";
 // これまでの勉強時間を算出する
 $sql_total_month = 'SELECT * FROM hours WHERE date_id <= :today';
 $total_stmt = $dbh->prepare($sql_total_month);
@@ -108,8 +108,8 @@ foreach($result_totals as $result_total) {
 };
 
 // $result_todayとcontentをむすびつける
-var_export(array_column($contents, 'content', 'date_id'));
+// var_export(array_column($contents, 'content', 'date_id'));
 // foreach($content as $key => $content) {
-  
+
 // }
 ?>

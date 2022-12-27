@@ -91,7 +91,7 @@ include_once("./admin/index.php");
       <button id="footer_record_button">記録・投稿</button>
     </div>
     <div class="modal">
-      <form action="" method="post" id="form_record">
+      <form action="./admin/form.php" method="post" id="form_record">
         <div class="modal_content">
           <button class="modal_close"><span class="batsu"></span></button>
           <div class="modal_detail">
@@ -107,42 +107,42 @@ include_once("./admin/index.php");
                 <p class="learning_content_title">学習コンテンツ （複数選択可）</p>
                 <div class="modal_learning_content_detail">
                   <div class="modal_N">
-                    <input type="checkbox"  name=""><label for="N_cramSchool" class="N_cramSchool">N予備校</label>
+                    <input type="checkbox"  name="" id="N_cramSchool"><label for="N_cramSchool" class="N_cramSchool">N予備校</label>
                   </div>
                   <div class="modal_dot">
-                    <input type="checkbox"  name=""><label for="dotinstall" class="dotinstall">ドットインストール</label>
+                    <input type="checkbox"  name="" id="dotinstall"><label for="dotinstall" class="dotinstall">ドットインストール</label>
                   </div>
                   <div class="modal_Posse">
-                    <input type="checkbox"  name=""><label for="posse"class="posse">POSSE課題</label>
+                    <input type="checkbox"  name="" id="posse"><label for="posse"class="posse">POSSE課題</label>
                   </div>
                 </div>
               </div>
               <div class="modal_learning_language">
-                <p class="learning_language_title">学習言語 （複数選択可)</p>
+                <p class="learning_language_title">学習言語（複数選択可)</p>
                 <div class="learning_language_content">
                   <div class="modal_html">
-                    <input type="checkbox"  name=""><label for="html"class="html">HTML</label>
+                    <input type="checkbox"  name="" id="html"><label for="html"class="html">HTML</label>
                   </div>
                   <div class="modal_css">
-                    <input type="checkbox"  name=""><label for="css"class="css">CSS</label>
+                    <input type="checkbox"  name="" id="css"><label for="css"class="css">CSS</label>
                   </div>
                   <div class="modal_js">
-                    <input type="checkbox"  name=""><label for="js"class="js">JavaScript</label>
+                    <input type="checkbox"  name="" id="js"><label for="js"class="js">JavaScript</label>
                   </div>
                   <div class="modal_php">
-                    <input type="checkbox"  name=""><label for="php"class="php">PHP</label>
+                    <input type="checkbox"  name="" id="php"><label for="php"class="php">PHP</label>
                   </div>
                   <div class="modal_laravel">
-                    <input type="checkbox" name=""><label for="laravel"class="laravel">Laravel</label>
+                    <input type="checkbox" name="" id="laravel"><label for="laravel"class="laravel">Laravel</label>
                   </div>
                   <div class="modal_sql">
-                    <input type="checkbox" name=""><label for="sql"class="sql">SQL</label>
+                    <input type="checkbox" name="" id="sql"><label for="sql"class="sql">SQL</label>
                   </div>
                   <div class="modal_shell">
-                    <input type="checkbox"  name=""><label for="shell"class="shell">SHELL</label>
+                    <input type="checkbox"  name="" id="shell"><label for="shell"class="shell">SHELL</label>
                   </div>
                   <div class="modal_others">
-                    <input type="checkbox"  name=""><label for="others"class="others">情報システム基礎情報（その他</label>
+                    <input type="checkbox"  name="" id="others"><label for="others"class="others">情報システム基礎情報（その他</label>
                   </div>
                 </div>
               </div>
@@ -199,7 +199,7 @@ include_once("./admin/index.php");
       </div>
 
     </div>
-    <div class="finish">
+    <!-- <div class="finish">
       <div class="finish_content">
         <button class="finish_close"><span class="batsu"></span></button>
         <div class="finish_mark">
@@ -217,9 +217,9 @@ include_once("./admin/index.php");
         <i class="gg-danger"></i>
         <p class="error_anounce">一時的にご利用できない状態です。<br>しばらく経ってから<br>再度アクセスしてください</p>
       </div>
-    </div>
-
+    </div> -->
   </main>
   <script src="../web/script/web.js"></script>
+  <script src="../web/script/form.js"></script>
 </body>
 </html>
