@@ -20,8 +20,12 @@
 $contents_date_array = array();
 $contents_content_array = array();
 foreach ($contents as $key =>$content) {
-  $contents_date_array[] = $content["date_id"];
-  $contents_content_array[] = $content["content"];
+  // $contents_date_array[] = $content["date_id"];
+  // $contents_content_array[] = $content["content"];
+  unset($content["id"], $content["date"]);
+  echo "<pre>";
+  print_r($content);
+  echo "</pre>";
 }
 // echo "<pre>";
 // print_r($contents_date_array);
@@ -47,7 +51,7 @@ foreach ($contents as $key =>$content) {
 ?>
 <!-- hoursテーブルを日、月、合計ごとのテーブルにまとめる -->
 <?php
-// まず日毎のデータを検索し、今日の勉強時間を出す
+// まず今日のデータを検索し、今日の勉強時間を出す
 $objDateTime = new DateTime();
 $today = $objDateTime->format('Y'.'m'.'d');
 $sql_today = 'SELECT * FROM hours WHERE date_id = :today';
@@ -62,10 +66,10 @@ foreach($result_todays as $key => $result_today) {
 // 不要な配列の値を削除
 unset($result_today[0], $result_today[1], $result_today[2], $result_today[3]);
 // $result_todayに今日の学習時間の合計を代入
-$result_today["today_sum"] = $today_sum;
-// echo "<pre>";
-// print_r($result_today);
-// echo "</pre>";
+$result_today["day_sum"] = $today_sum;
+echo "<pre>";
+print_r($result_today);
+echo "</pre>";
 
 
 // 今月のデータを検索し、今月の勉強時間を出す
@@ -96,7 +100,16 @@ $total_stmt->bindValue(':today', $today);
 $total_stmt->execute();
 $result_totals = $total_stmt->fetchAll();
 $total_sum = 0;
+// echo "<pre>";
+// print_r($result_totals);
+// echo "</pre>";
 foreach($result_totals as $result_total) {
   $total_sum += $result_total["hours"];
 };
+
+// $result_todayとcontentをむすびつける
+var_export(array_column($contents, 'content', 'date_id'));
+// foreach($content as $key => $content) {
+  
+// }
 ?>
