@@ -56,10 +56,18 @@ $today_stmt->bindValue(':today', $today);
 $today_stmt->execute();
 $result_todays = $today_stmt->fetchAll();
 $today_sum = 0;
-foreach($result_todays as $result_today) {
+foreach($result_todays as $key => $result_today) {
   $today_sum += $result_today["hours"];
 }
-// // 配列の中に今日の日付と時間が入ってる.
+// 不要な配列の値を削除
+unset($result_today[0], $result_today[1], $result_today[2], $result_today[3]);
+// $result_todayに今日の学習時間の合計を代入
+$result_today["today_sum"] = $today_sum;
+// echo "<pre>";
+// print_r($result_today);
+// echo "</pre>";
+
+
 // 今月のデータを検索し、今月の勉強時間を出す
 $this_month = $objDateTime->format('Y/m');
 $this_month_first = $objDateTime->format('Y'.'m'.'00');
@@ -73,7 +81,14 @@ $month_sum = 0;
 foreach($result_monthes as $result_month) {
   $month_sum += $result_month["hours"];
 }
+unset($result_month[0],$result_month[1],$result_month[2],$result_month[3]);
+$result_month["month_sum"] = $month_sum;
 
+
+echo "<pre>";
+print_r($result_month);
+// print_r(array_values($result_month));
+echo "</pre>";
 // これまでの勉強時間を算出する
 $sql_total_month = 'SELECT * FROM hours WHERE date_id <= :today';
 $total_stmt = $dbh->prepare($sql_total_month);

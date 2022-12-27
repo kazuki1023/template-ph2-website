@@ -78,12 +78,12 @@ include_once("./admin/index.php");
         </div>
       </div>
     </div>
-    <form class="date" action="" method="POST">
-      <button class="date_button" type="submit">
+    <form class="date" action="./webapp.php" method="POST">
+      <button class="date_button" type="submit" name="before_month">
         <div class="arrow arrow-left"></div>
       </button>
       <div id="date_detail"><?php echo $this_month;?></div>
-      <button class="date_button" type="submit">
+      <button class="date_button" type="submit" name="after_month">
         <div class="arrow arrow-right"></div>
       </button>
     </form>
