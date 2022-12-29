@@ -9,6 +9,8 @@ const modalRecord = document.getElementsByClassName("modal_record");
 //   console.log("そうしんしたよ")
 // })
 
+// 
+
 // 記録ボタンを押すとローディング画面に行く
 {
   const modalRecord = document.getElementsByClassName("modal_record")
