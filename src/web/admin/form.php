@@ -1,4 +1,12 @@
+<?php
+if (isset($_POST['date']) && is_array($_POST['date'])) {
+  $modal_date = $_POST['date'];
+  echo "<pre>";
+  var_dump($modal_date);
+  echo "</pre>";
+};
 
+?>
 
 <!DOCTYPE html>
 <html lang="ja">

@@ -104,8 +104,8 @@
 - [x] input=dateの値をjsでinput=chechboxのところに持ってくる
 - [x] form.phpに飛ぶようにする。３秒立ったら「登録完了しました」って出るようにする。
 - [] checkboxの値を受け取れるようにする [参考サイト](https://qiita.com/4cres/items/26154314959dcccbfd34)(https://deco8.net/php-html-form-checkbox-array/)
-- [] contentsのnameをdate[1][]にする
-- [] languageのnameをdate[2][]にする
+- [x] contentsのnameをdate[1][]にする
+- [x] languageのnameをdate[2][]にする
 
 
 

@@ -19,8 +19,6 @@ hours_today_title.setAttribute('name', today_date);
 
 
 
-
-
 // モーダル
 
 // headerの記録ボタンを押すとモーダルが出てくる
@@ -62,8 +60,11 @@ calenderCloseButton.addEventListener("click", () => {
 
 // モーダル内のカレンダー押したら、その値をcheckbox内に返す
 const inputDate = document.querySelector(`input[type="date"][name="learning_day_detail"]`);
+const dateConfirm = document.getElementById('date_confirm');
 inputDate.addEventListener('change', () => {
   document.getElementsByClassName('date_check')[0].innerHTML = inputDate.value;
+  dateConfirm.setAttribute("value", inputDate.value)
+
   // date_idの中に入れるデータ
   console.log(inputDate.value.replace(/-/g, ''));
 });
