@@ -101,7 +101,7 @@ include_once("./admin/index.php");
                   <p class="learning_day_title" >学習日</p>
                   <input type="date" name="learning_day_detail" class="learning_day_text">
                   <div class="modal_date">
-                    <input type="checkbox" name ="date[]" id="date_check"><label for="date_check" class="date_check"></label>
+                    <input type="checkbox" name ="date[]" id="date_confirm"><label for="date_confirm" class="date_check"></label>
                   </div>
                 </div>
               </div>

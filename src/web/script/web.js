@@ -61,10 +61,14 @@ calenderCloseButton.addEventListener("click", () => {
 })
 
 // モーダル内のカレンダー押したら、その値をcheckbox内に返す
-const inputDate = document.getElementById(`date_check`);
+const inputDate = document.querySelector(`input[type="date"][name="learning_day_detail"]`);
 inputDate.addEventListener('change', () => {
   document.getElementsByClassName('date_check')[0].innerHTML = inputDate.value;
+  // date_idの中に入れるデータ
+  console.log(inputDate.value.replace(/-/g, ''));
 });
+
+
 
 // モーダル内の学習コンテンツ,学習言語の項目を押したら青くなる処理
 {
